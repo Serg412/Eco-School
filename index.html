@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco-school | Libretas ecológicas de alta gama — Bogotá, Colombia</title>
+<meta name="description" content="Libretas ecológicas 100% recicladas y biodegradables. Eco-school, referente de productos ecosostenibles en Colombia.">
+<meta name="theme-color" content="#05703B">
+<style>
+  :root {
+    --verde-oscuro: #05703B;
+    --verde-jungla: #1b5e20;
+    --verde-hoja: #2e7d32;
+    --terracota-cafe: #701705;
+    --negro-profundo: #180501;
+    --fondo-claro: #F7F4EF;
+    --fondo-selva: #E8F3EC;
+    --blanco: #FFFFFF;
+    --verde-hover: #03552c;
+    --terracota-hover: #5a1204;
+    --texto-secundario: #4a3b33;
+    --borde-suave: #d8ccbd;
+    --sombra: 0 10px 40px -10px rgba(0,0,0,0.12);
+    --sombra-selva: 0 20px 60px -15px rgba(5, 112, 59, 0.25);
+    --transicion: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --oro: #C5A059;
+    --hoja-claro: #A5D6A7;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+  }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--fondo-claro);
+    color: var(--negro-profundo);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 110px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(5, 112, 59, 0.1);
+    color: var(--verde-oscuro);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(5, 112, 59, 0.2);
+  }
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--negro-profundo);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+
+  .section-title span {
+    color: var(--verde-oscuro);
+    background: linear-gradient(120deg, var(--verde-oscuro), var(--verde-hoja));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--texto-secundario);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transicion);
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-hoja));
+    color: var(--blanco);
+    box-shadow: 0 8px 24px rgba(5, 112, 59, 0.35);
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--verde-hoja), var(--verde-oscuro));
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(5, 112, 59, 0.45);
+  }
+
+  .btn-secondary {
+    background: var(--blanco);
+    color: var(--negro-profundo);
+    border: 2px solid var(--negro-profundo);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--terracota-cafe);
+    color: var(--terracota-cafe);
+    background: rgba(112, 23, 5, 0.05);
+    transform: translateY(-3px);
+  }
+
+  .btn-terracota {
+    background: linear-gradient(135deg, var(--terracota-cafe), #9b220a);
+    color: var(--blanco);
+    box-shadow: 0 8px 24px rgba(112, 23, 5, 0.35);
+  }
+
+  .btn-terracota:hover {
+    background: linear-gradient(135deg, #9b220a, var(--terracota-cafe));
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(112, 23, 5, 0.45);
+  }
+
+  .btn-outline-oro {
+    background: transparent;
+    color: var(--oro);
+    border: 2px solid var(--oro);
+  }
+
+  .btn-outline-oro:hover {
+    background: var(--oro);
+    color: var(--negro-profundo);
+  }
+
+  /* Leaf decorations */
+  .leaf {
+    position: absolute;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .leaf-1 { top: 10%; left: -5%; width: 300px; filter: blur(20px); }
+  .leaf-2 { top: 20%; right: -8%; width: 350px; filter: blur(25px); }
+  .leaf-3 { bottom: 15%; left: -10%; width: 400px; filter: blur(30px); }
+  .leaf-4 { bottom: 10%; right: -5%; width: 320px; filter: blur(22px); }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(247, 244, 239, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--borde-suave);
+    transition: var(--transicion);
+  }
+
+  header.scrolled {
+    background: rgba(247, 244, 239, 0.95);
+    box-shadow: 0 4px 24px -8px rgba(0,0,0,0.06);
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--negro-profundo);
+    transition: var(--transicion);
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-hoja));
+    transition: var(--transicion);
+    border-radius: 2px;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .nav-links a:hover {
+    color: var(--verde-oscuro);
+  }
+
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(5, 112, 59, 0.3);
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-toggle span {
+    width: 26px;
+    height: 2.5px;
+    background: var(--negro-profundo);
+    border-radius: 2px;
+    transition: var(--transicion);
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 180px;
+    padding-bottom: 120px;
+    background: linear-gradient(135deg, var(--fondo-claro) 0%, #e6e0d1 45%, var(--fondo-selva) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20 20 Q40 5 60 20 T100 20 V100 H0 V20" fill="none" stroke="rgba(5,112,59,0.03)" stroke-width="2"/></svg>');
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 600px;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.7);
+    color: var(--verde-oscuro);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: var(--negro-profundo);
+    line-height: 1.05;
+    margin-bottom: 28px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-text h1 span {
+    color: var(--verde-oscuro);
+    background: linear-gradient(120deg, var(--verde-oscuro), var(--verde-hoja));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-text p {
+    font-size: 1.35rem;
+    color: var(--texto-secundario);
+    margin-bottom: 40px;
+    line-height: 1.9;
+    max-width: 540px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--sombra-selva);
+    border: 2px solid var(--borde-suave);
+    background: var(--blanco);
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    transition: transform 0.8s ease;
+  }
+
+  .hero-visual:hover img {
+    transform: scale(1.05);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    background: linear-gradient(135deg, var(--terracota-cafe), #9b220a);
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    box-shadow: 0 6px 20px rgba(112, 23, 5, 0.4);
+    border: 3px solid var(--fondo-claro);
+    z-index: 5;
+    transform: rotate(-6deg);
+  }
+
+  .hero-badge-2 {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-hoja));
+    color: var(--blanco);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    box-shadow: 0 6px 20px rgba(5, 112, 59, 0.4);
+    border: 3px solid var(--fondo-claro);
+    z-index: 5;
+    transform: rotate(6deg);
+  }
+
+  /* Stats */
+  .stats {
+    background: var(--blanco);
+    padding: 70px 0;
+    border-top: 1px solid var(--borde-suave);
+    border-bottom: 1px solid var(--borde-suave);
+    position: relative;
+  }
+
+  .stats::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-hoja), var(--terracota-cafe));
+    z-index: 1;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-card {
+    padding: 32px 24px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, var(--fondo-claro), #efe6d9);
+    border: 1px solid var(--borde-suave);
+    transition: var(--transicion);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card:hover {
+    background: var(--fondo-selva);
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-selva);
+    border-color: var(--verde-oscuro);
+  }
+
+  .stat-card h3 {
+    font-size: 2.75rem;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+    margin-bottom: 8px;
+  }
+
+  .stat-card p {
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* DOFA */
+  .dofa {
+    background: var(--fondo-claro);
+  }
+
+  .dofa-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  .dofa-visual {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--sombra-selva);
+    border: 2px solid var(--borde-suave);
+  }
+
+  .dofa-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.8s ease;
+    filter: saturate(1.1) contrast(1.05);
+  }
+
+  .dofa-visual:hover img {
+    transform: scale(1.03);
+  }
+
+  .dofa-tag {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: rgba(255,255,255,0.9);
+    color: var(--verde-oscuro);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid var(--borde-suave);
+    backdrop-filter: blur(8px);
+  }
+
+  .dofa-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+
+  .dofa-card {
+    background: var(--blanco);
+    padding: 34px 28px;
+    border-radius: 32px;
+    border: 1px solid var(--borde-suave);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transicion);
+  }
+
+  .dofa-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-selva);
+    border-color: var(--verde-oscuro);
+  }
+
+  .dofa-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 6px; height: 100%;
+    background: var(--verde-oscuro);
+  }
+
+  .dofa-card.debilidades::before { background: var(--terracota-cafe); }
+  .dofa-card.oportunidades::before { background: var(--verde-hoja); }
+  .dofa-card.amenazas::before { background: var(--terracota-cafe); }
+
+  .dofa-card h3 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .dofa-card h3 span {
+    font-size: 1.75rem;
+    width: 44px;
+    height: 44px;
+    background: var(--fondo-selva);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--verde-oscuro);
+    font-weight: 900;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .dofa-card.debilidades h3 span,
+  .dofa-card.amenazas h3 span {
+    background: #fdece8;
+    color: var(--terracota-cafe);
+  }
+
+  .dofa-card.oportunidades h3 span {
+    background: #e8f5e9;
+    color: var(--verde-hoja);
+  }
+
+  .dofa-card p {
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* Process */
+  .process {
+    background: var(--blanco);
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    max-width: 950px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 70px;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 28px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--verde-oscuro), var(--verde-hoja), var(--terracota-cafe));
+    z-index: 0;
+  }
+
+  .process-step {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .process-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-hoja));
+    color: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(5, 112, 59, 0.4);
+    border: 2px solid var(--blanco);
+    position: relative;
+    z-index: 3;
+  }
+
+  .step-content {
+    background: var(--fondo-selva);
+    padding: 28px 32px;
+    border-radius: 28px;
+    border: 1px solid var(--borde-suave);
+    flex: 1;
+    transition: var(--transicion);
+  }
+
+  .process-step:hover .step-content {
+    background: var(--blanco);
+    transform: translateX(-8px);
+    box-shadow: var(--sombra-selva);
+    border-color: var(--verde-oscuro);
+  }
+
+  .step-content h3 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--negro-profundo);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .step-content p {
+    color: var(--texto-secundario);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .process-visual {
+    margin-top: 80px;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--sombra-selva);
+    border: 2px solid var(--borde-suave);
+    aspect-ratio: 16 / 9;
+    background: var(--fondo-selva);
+  }
+
+  .process-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.15) contrast(1.08);
+  }
+
+  /* Products */
+  .products {
+    background: var(--fondo-selva);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .product-card {
+    background: var(--blanco);
+    border-radius: 36px;
+    overflow: hidden;
+    border: 1px solid var(--borde-suave);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    transition: var(--transicion);
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--sombra-selva);
+    border-color: var(--verde-oscuro);
+  }
+
+  .product-visual {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    background: var(--fondo-claro);
+  }
+
+  .product-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: saturate(1.1);
+  }
+
+  .product-card:hover .product-visual img {
+    transform: scale(1.1);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(5, 112, 59, 0.35);
+    z-index: 3;
+  }
+
+  .product-info {
+    padding: 28px 24px;
+  }
+
+  .product-info h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--negro-profundo);
+    margin-bottom: 10px;
+  }
+
+  .product-info p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  .product-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+  }
+
+  .product-price span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--texto-secundario);
+  }
+
+  .product-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--oro);
+    color: var(--negro-profundo);
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.35);
+  }
+
+  .products-cta {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Policy */
+  .policy {
+    background: var(--fondo-claro);
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .policy-card {
+    background: var(--blanco);
+    padding: 44px 32px;
+    border-radius: 34px;
+    border: 1px solid var(--borde-suave);
+    transition: var(--transicion);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .policy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-selva);
+    border-color: var(--verde-oscuro);
+  }
+
+  .policy-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--fondo-selva);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border: 2px solid var(--borde-suave);
+  }
+
+  .policy-card h3 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--negro-profundo);
+    margin-bottom: 16px;
+  }
+
+  .policy-card p {
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--verde-oscuro) 0%, #03552c 50%, var(--verde-jungla) 100%);
+    color: var(--blanco);
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><circle cx="30" cy="30" r="2" fill="rgba(255,255,255,0.08)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.08)"/><circle cx="60" cy="60" r="1.5" fill="rgba(255,255,255,0.06)"/><circle cx="10" cy="100" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="110" cy="20" r="1.5" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .cta h2 span {
+    color: var(--oro);
+  }
+
+  .cta p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta .btn-primary {
+    background: var(--blanco);
+    color: var(--verde-oscuro);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  .cta .btn-primary:hover {
+    background: var(--fondo-claro);
+    color: var(--negro-profundo);
+  }
+
+  .cta .btn-terracota {
+    color: var(--blanco);
+  }
+
+  .cta .btn-terracota:hover {
+    color: var(--blanco);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--negro-profundo);
+    color: var(--blanco);
+    padding: 100px 0 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--verde-oscuro), var(--verde-hoja), var(--terracota-cafe));
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-brand .logo img {
+    width: 80px;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  }
+
+  .footer-brand p {
+    color: #c9c4ba;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 340px;
+  }
+
+  .footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--blanco);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-col h4 span {
+    font-size: 1.3rem;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul li a {
+    color: #c9c4ba;
+    font-size: 0.95rem;
+    transition: var(--transicion);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-col ul li a:hover {
+    color: var(--verde-oscuro);
+    padding-left: 6px;
+  }
+
+  .footer-contact {
+    margin-bottom: 20px;
+  }
+
+  .footer-contact .icon {
+    color: var(--verde-oscuro);
+    font-size: 1.1rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #3a2e23;
+    padding-top: 36px;
+    text-align: center;
+    color: #c9c4ba;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* Mobile */
+  @media (max-width: 992px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 50px;
+    }
+
+    .hero-text, .hero-text p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+
+    .hero-visual {
+      aspect-ratio: auto;
+      max-height: 550px;
+    }
+
+    .dofa-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .dofa-visual {
+      aspect-ratio: auto;
+      max-height: 500px;
+    }
+
+    .dofa-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-steps {
+      padding-left: 50px;
+    }
+
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      background: var(--fondo-claro);
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0;
+      gap: 30px;
+      transform: translateY(-150%);
+      transition: var(--transicion);
+      border-bottom: 1px solid var(--borde-suave);
+      box-shadow: 0 16px 32px -8px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+
+    .process-step {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .process-steps::before {
+      left: 28px;
+    }
+
+    .step-number {
+      align-self: center;
+    }
+
+    .cta h2 {
+      font-size: 2.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .stat-card h3 {
+      font-size: 2rem;
+    }
+
+    .contact-chip {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="nav-bar container">
+    <div class="logo">
+      <img src="logo.png" alt="Eco-school logo">
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#dofa">Análisis DOFA</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#politica">Política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="contact-chip">📞 +57 300 000 0000</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="leaf leaf-1">
+    <img src="1.jpg" alt="Hoja decorativa">
+  </div>
+  <div class="leaf leaf-2">
+    <img src="2.jpg" alt="Hoja decorativa">
+  </div>
+  <div class="leaf leaf-3">
+    <img src="3.jpg" alt="Hoja decorativa">
+  </div>
+  <div class="leaf leaf-4">
+    <img src="4.jpg" alt="Hoja decorativa">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text reveal">
+        <div class="hero-kicker">🌿 Hecho en la selva urbana de Bogotá</div>
+        <h1>Libretas ecológicas <span>para un futuro verde</span></h1>
+        <p>Diseñadas en Bogotá con materiales 100% reciclados y biodegradables. Cada hoja lleva el alma de la selva y el compromiso de un planeta más sano. Calidad de alta gama para quienes cuidan la tierra.</p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn btn-primary">Ver productos</a>
+          <a href="#proceso" class="btn btn-secondary">Conoce nuestro proceso</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal reveal-delay-1">
+        <span class="hero-badge">100% Bogotá</span>
+        <span class="hero-badge-2">Selva urbana</span>
+        <img src="marco.png" alt="Inicio Eco-school">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <h3>100%</h3>
+        <p>Reciclado y biodegradable</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <h3>2%</h3>
+        <p>Donado a causas sociales</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <h3>100%</h3>
+        <p>Salarios dignos y equitativos</p>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <h3>+5</h3>
+        <p>Años de compromiso verde</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dofa" id="dofa">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Análisis estratégico</div>
+      <h2 class="section-title">Matriz <span>DOFA</span></h2>
+      <p class="section-subtitle">Fortalezas, oportunidades, debilidades y amenazas de nuestro modelo sostenible en la selva urbana.</p>
+    </div>
+    <div class="dofa-wrapper">
+      <div class="dofa-visual reveal reveal-delay-1">
+        <span class="dofa-tag">🌳 Visión ecológica</span>
+        <img src="dofa.png" alt="Análisis DOFA Eco-school">
+      </div>
+      <div class="dofa-grid">
+        <div class="dofa-card fortalezas reveal reveal-delay-2">
+          <h3><span>▲</span> Fortalezas</h3>
+          <p>Materiales 100% reciclables y biodegradables, producción con huella de carbono neutralizada y diseño de alta gama que destaca en el mercado corporativo y educativo.</p>
+        </div>
+        <div class="dofa-card debilidades reveal reveal-delay-3">
+          <h3><span>▼</span> Debilidades</h3>
+          <p>Costo inicial de materias primas certificadas y mercado nacional aún en proceso de adopción masiva de consumo responsable de papel.</p>
+        </div>
+        <div class="dofa-card oportunidades reveal reveal-delay-4">
+          <h3><span>+</span> Oportunidades</h3>
+          <p>Expansión del mercado corporativo, alianzas con organizaciones sin ánimo de lucro y creciente conciencia ambiental en Colombia.</p>
+        </div>
+        <div class="dofa-card amenazas reveal">
+          <h3><span>!</span> Amenazas</h3>
+          <p>Competencia de libretas convencionales de bajo costo y regulaciones ambientales en constante evolución que exigen adaptación continua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Ciclo de vida</div>
+      <h2 class="section-title">Proceso de recolección y <span>reciclaje</span></h2>
+      <p class="section-subtitle">Transformamos materiales reciclados en libretas ecológicas de alta gama, paso a paso, desde Bogotá hacia toda Colombia.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>📦 Recolección selectiva</h3>
+          <p>Recogemos papel y cartón usados de oficinas, hogares y centros educativos de Bogotá, asegurando la separación adecuada en origen.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>🌿 Tratamiento y pulpa</h3>
+          <p>Los materiales se convierten en pulpa celulósica sin cloro ni químicos agresivos, manteniendo la fibra pura y biodegradable.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>📄 Fabricación de hoja</h3>
+          <p>Se forma el papel ecológico en hojas de alta gramaje, listas para encuadernar en libretas de diseño premium.</p>
+        </div>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>🚚 Distribución consciente</h3>
+          <p>Entregamos productos con empaques reciclables, reduciendo residuos y llevando sostenibilidad a cada cliente en Colombia.</p>
+        </div>
+      </div>
+    </div>
+    <div class="process-visual reveal reveal-delay-4">
+      <img src="infografia.png" alt="Infografía proceso de recolección y reciclaje Bogotá">
+    </div>
+  </div>
+</section>
+
+<section class="products" id="productos">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Catálogo verde</div>
+      <h2 class="section-title">Nuestros <span>productos</span></h2>
+      <p class="section-subtitle">Libretas ecológicas de alta gama, cada una con su propia personalidad y compromiso con la selva.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card reveal">
+        <div class="product-visual">
+          <span class="product-badge">Bestseller</span>
+          <img src="5.jpg" alt="Libreta ecológica A5">
+        </div>
+        <div class="product-info">
+          <h3>Libreta Eco A5</h3>
+          <p>Tapa dura reciclada, hojas 100% biodegradables y encuadernación cosida a mano. Ideal para diario y notas.</p>
+          <div class="product-price">$45.000<span>COP</span></div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-visual">
+          <span class="product-tag">Nuevo</span>
+          <img src="6.jpg" alt="Libreta ecológica pocket">
+        </div>
+        <div class="product-info">
+          <h3>Libreta Pocket</h3>
+          <p>Formato pequeño para llevar a todas partes. Tapa kraft natural y papel semilla que puedes plantar.</p>
+          <div class="product-price">$28.000<span>COP</span></div>
+        </div>
+      </div>
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-visual">
+          <span class="product-badge">Corporativo</span>
+          <img src="7.jpg" alt="Set ecológico ejecutivo">
+        </div>
+        <div class="product-info">
+          <h3>Set Ejecutivo</h3>
+          <p>Libreta A4 + bolígrafo biodegradable en estuche de cartón reciclado. Perfecto para regalos empresariales.</p>
+          <div class="product-price">$89.000<span>COP</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="products-cta reveal">
+      <a href="#contacto" class="btn btn-terracota">Pedir catálogo completo</a>
+    </div>
+  </div>
+</section>
+
+<section class="policy" id="politica">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-kicker">Nuestros compromisos</div>
+      <h2 class="section-title">Política de Calidad y <span>Sostenibilidad</span></h2>
+      <p class="section-subtitle">Cuatro pilares que sustentan cada libreta que sale de nuestro taller en Bogotá.</p>
+    </div>
+    <div class="policy-grid">
+      <div class="policy-card reveal">
+        <div class="policy-icon">🌱</div>
+        <h3>Pilar Ambiental</h3>
+        <p>Materiales 100% reciclables y biodegradables en producción y distribución, enfocados en neutralizar la huella de carbono y reducir residuos.</p>
+      </div>
+      <div class="policy-card reveal reveal-delay-1">
+        <div class="policy-icon">🤝</div>
+        <h3>Pilar Social</h3>
+        <p>Educación ambiental mediante nuestros productos e integración con organizaciones sin ánimo de lucro, donando el 2% de las ganancias a causas sociales.</p>
+      </div>
+      <div class="policy-card reveal reveal-delay-2">
+        <div class="policy-icon">💰</div>
+        <h3>Pilar Económico</h3>
+        <p>Salarios dignos y equitativos para todos los trabajadores, sin distinción de raza, género, estrato o cargo, y expansión del mercado corporativo.</p>
+      </div>
+      <div class="policy-card reveal reveal-delay-3">
+        <div class="policy-icon">♻️</div>
+        <h3>Compromiso Integral</h3>
+        <p>Máxima calidad, entorno laboral ameno e íntegro, y respeto absoluto por los derechos humanos y el medio ambiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="container">
+    <div class="cta-content reveal">
+      <h2>¿Listo para escribir <span>una nueva historia</span>?</h2>
+      <p>Únete a la revolución sostenible. Libretas ecológicas de alta gama, hechas en Bogotá con amor al planeta. Contáctanos para pedidos corporativos o personales.</p>
+      <div class="cta-actions">
+        <a href="mailto:contacto@eco-school.com.co" class="btn btn-primary">Escríbenos por correo</a>
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn btn-terracota">Hablar por WhatsApp</a>
+      </div>
+      <div style="margin-top: 30px; font-size: 1.1rem; font-weight: 800; color: var(--oro);">
+        📞 +57 300 000 0000 &nbsp;|&nbsp; 📧 contacto@eco-school.com.co &nbsp;|&nbsp; 📍 Bogotá, Colombia
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand reveal">
+        <div class="logo">
+          <img src="logo.png" alt="Eco-school logo">
+        </div>
+        <p>Eco-school — Libretas ecológicas de alta gama fabricadas en Bogotá, Colombia con materiales 100% reciclados y biodegradables. Cada compra ayuda a proteger la selva.</p>
+      </div>
+      <div class="footer-col reveal reveal-delay-1">
+        <h4><span>📚</span>Empresa</h4>
+        <ul>
+          <li><a href="#inicio"><span class="icon">▸</span>Inicio</a></li>
+          <li><a href="#dofa"><span class="icon">▸</span>Análisis DOFA</a></li>
+          <li><a href="#proceso"><span class="icon">▸</span>Proceso de reciclaje</a></li>
+          <li><a href="#productos"><span class="icon">▸</span>Productos</a></li>
+          <li><a href="#politica"><span class="icon">▸</span>Política de sostenibilidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-col reveal reveal-delay-2">
+        <h4><span>📞</span>Contacto</h4>
+        <ul>
+          <li class="footer-contact"><a href="mailto:contacto@eco-school.com.co"><span class="icon">✉</span>contacto@eco-school.com.co</a></li>
+          <li class="footer-contact"><a href="https://wa.me/573000000000" target="_blank" rel="noopener"><span class="icon">💬</span>+57 300 000 0000</a></li>
+          <li class="footer-contact"><a href="#"><span class="icon">📍</span>Bogotá, Colombia</a></li>
+          <li class="footer-contact"><a href="#"><span class="icon">🕒</span>Lun - Vie: 8:00 - 18:00</a></li>
+        </ul>
+      </div>
+      <div class="footer-col reveal reveal-delay-3">
+        <h4><span>🌿</span>Sostenibilidad</h4>
+        <ul>
+          <li><a href="#"><span class="icon">▸</span>100% Reciclado</a></li>
+          <li><a href="#"><span class="icon">▸</span>Biodegradable</a></li>
+          <li><a href="#"><span class="icon">▸</span>2% donado a causas sociales</a></li>
+          <li><a href="#"><span class="icon">▸</span>Salarios dignos</a></li>
+          <li><a href="#"><span class="icon">▸</span>Huella de carbono neutral</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Eco-school. Todos los derechos reservados. Hecho con <span style="color: var(--terracota-cafe);">❤</span> y <span style="color: var(--verde-oscuro);">🌿</span> en Bogotá, Colombia.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+
+  const observerOptions = {
+    threshold: 0.08,
+    rootMargin: '0px 0px -60px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
